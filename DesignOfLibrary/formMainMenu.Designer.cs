@@ -1,6 +1,6 @@
 ﻿namespace DesignOfLibrary
 {
-    partial class Form1
+    partial class formMainMenu
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // formMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 385);
-            this.Name = "Form1";
+            this.Name = "formMainMenu";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.formMainMenu_Load);
             this.ResumeLayout(false);
 
         }
