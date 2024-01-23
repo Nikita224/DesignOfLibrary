@@ -24,7 +24,8 @@ namespace DesignOfLibrary
         {
 
             myConnetionToMySql.SetSettings(settings);
-           String p = myConnetionToMySql.SQLRequest("SELECT SUM(`Quatity`) FROM `Metrics`;", 1)[0][0];
+            String [][] p = myConnetionToMySql.SQLRequest("SELECT * FROM `books`;", 4);
+            label1.Text = p[0][0].ToString() + p[0][1].ToString() + p[0][2].ToString() + p[0][3].ToString();
         }
     }
 }

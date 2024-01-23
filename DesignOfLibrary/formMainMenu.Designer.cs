@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(100, 64);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(360, 94);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // formMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 385);
+            this.Controls.Add(this.label1);
             this.Name = "formMainMenu";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.formMainMenu_Load);
@@ -43,6 +54,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
     }
 }
 
