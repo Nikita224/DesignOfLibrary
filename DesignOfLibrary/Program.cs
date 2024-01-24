@@ -17,10 +17,15 @@ namespace DesignOfLibrary
         {
             string filePath = "auth.txt";
             String settings = "";
-
+            IsMySQL myConnetionToMySql = new IsMySQL();
             try
             {
                 settings = File.ReadAllText(filePath);
+                myConnetionToMySql.SetSettings(settings);
+
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new formMainMenu(myConnetionToMySql));
             }
             catch (IOException e)
             {
@@ -31,9 +36,7 @@ namespace DesignOfLibrary
                 Console.WriteLine($"Произошла ошибка: {ex.Message}");
             }
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formMainMenu(settings));
+            
         }
     }
 }
