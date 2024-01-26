@@ -15,9 +15,11 @@ namespace DesignOfLibrary
     public partial class formMainMenu : Form
     {
         IsMySQL myConnetionToMySql;
-        public formMainMenu(IsMySQL myConnetionToMySql)
+        int idWorker;
+        public formMainMenu(IsMySQL myConnetionToMySql, int idWorker)
         {
             this.myConnetionToMySql = myConnetionToMySql;
+            this.idWorker = idWorker;
             InitializeComponent();
         }
 
@@ -31,7 +33,7 @@ namespace DesignOfLibrary
 
         private void formFindAbonementThread()
         {
-            formSearchVisitor form = new formSearchVisitor(myConnetionToMySql, this.labelNameWorker);
+            formSearchVisitor form = new formSearchVisitor(myConnetionToMySql, this.labelNameWorker, idWorker);
             Application.Run(form);
         }
 

@@ -25,7 +25,7 @@ namespace DesignOfLibrary
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new formMainMenu(myConnetionToMySql));
+                Application.Run(new formLogin(myConnetionToMySql));
             }
             catch (IOException e)
             {

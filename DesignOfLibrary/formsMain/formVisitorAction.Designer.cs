@@ -36,6 +36,8 @@
             this.btDellBook = new System.Windows.Forms.Button();
             this.btAddBook = new System.Windows.Forms.Button();
             this.lvCurrentBooks = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lb1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +46,7 @@
             // 
             this.lbNameVisitor.AutoSize = true;
             this.lbNameVisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lbNameVisitor.Location = new System.Drawing.Point(13, 31);
+            this.lbNameVisitor.Location = new System.Drawing.Point(13, 57);
             this.lbNameVisitor.Name = "lbNameVisitor";
             this.lbNameVisitor.Size = new System.Drawing.Size(149, 26);
             this.lbNameVisitor.TabIndex = 0;
@@ -54,7 +56,7 @@
             // 
             this.lbDateFrom.AutoSize = true;
             this.lbDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lbDateFrom.Location = new System.Drawing.Point(13, 57);
+            this.lbDateFrom.Location = new System.Drawing.Point(13, 128);
             this.lbDateFrom.Name = "lbDateFrom";
             this.lbDateFrom.Size = new System.Drawing.Size(126, 26);
             this.lbDateFrom.TabIndex = 1;
@@ -100,6 +102,7 @@
             this.btDellBook.TabIndex = 5;
             this.btDellBook.Text = "Списать книгу";
             this.btDellBook.UseVisualStyleBackColor = true;
+            this.btDellBook.Click += new System.EventHandler(this.btDellBook_Click);
             // 
             // btAddBook
             // 
@@ -118,12 +121,35 @@
             this.lvCurrentBooks.Size = new System.Drawing.Size(324, 199);
             this.lvCurrentBooks.TabIndex = 0;
             this.lvCurrentBooks.UseCompatibleStateImageBehavior = false;
+            this.lvCurrentBooks.SelectedIndexChanged += new System.EventHandler(this.lvCurrentBooks_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label1.Location = new System.Drawing.Point(13, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 26);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Абонемент с:";
+            // 
+            // lb1
+            // 
+            this.lb1.AutoSize = true;
+            this.lb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.lb1.Location = new System.Drawing.Point(13, 31);
+            this.lb1.Name = "lb1";
+            this.lb1.Size = new System.Drawing.Size(62, 26);
+            this.lb1.TabIndex = 4;
+            this.lb1.Text = "Имя:";
             // 
             // formVisitorAction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 449);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lb1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbDateFrom);
@@ -148,5 +174,7 @@
         private System.Windows.Forms.ListView lvCurrentBooks;
         private System.Windows.Forms.Button btAddBook;
         private System.Windows.Forms.Button btDellBook;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb1;
     }
 }
