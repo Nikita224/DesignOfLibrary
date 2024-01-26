@@ -18,18 +18,20 @@ namespace DesignOfLibrary.forms
     {
         Label lb;
         IsMySQL myConnetionToMySql;
+        int idWorker;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="myConnetionToMySql"></param>
         /// <param name="action">0 - vzyat; 1 - polojit; 2 - nichego</param>
-        public formSearchVisitor(IsMySQL myConnetionToMySql, Label lb)
+        public formSearchVisitor(IsMySQL myConnetionToMySql, Label lb, int idWorker)
         {
             this.myConnetionToMySql = myConnetionToMySql;
             this.lb = lb;
             InitializeComponent();
             refreshList();
+            this.idWorker = idWorker;
         }
 
         ~formSearchVisitor()
@@ -79,7 +81,7 @@ namespace DesignOfLibrary.forms
         }
         private void formVisitorActionThread(object p)
         {
-            formVisitorAction form = new formVisitorAction(myConnetionToMySql, Int32.Parse(p.ToString()));
+            formVisitorAction form = new formVisitorAction(myConnetionToMySql, Int32.Parse(p.ToString()), idWorker);
             Application.Run(form);
         }
 
