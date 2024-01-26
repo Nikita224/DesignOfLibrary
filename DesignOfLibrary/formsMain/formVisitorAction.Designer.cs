@@ -34,7 +34,7 @@
             this.lvLastOperations = new System.Windows.Forms.ListView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btDellBook = new System.Windows.Forms.Button();
-            this.btAddBook = new System.Windows.Forms.Button();
+            this.btSearchBook = new System.Windows.Forms.Button();
             this.lvCurrentBooks = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.lb1 = new System.Windows.Forms.Label();
@@ -44,11 +44,10 @@
             // 
             // lbNameVisitor
             // 
-            this.lbNameVisitor.AutoSize = true;
             this.lbNameVisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lbNameVisitor.Location = new System.Drawing.Point(13, 57);
             this.lbNameVisitor.Name = "lbNameVisitor";
-            this.lbNameVisitor.Size = new System.Drawing.Size(149, 26);
+            this.lbNameVisitor.Size = new System.Drawing.Size(294, 83);
             this.lbNameVisitor.TabIndex = 0;
             this.lbNameVisitor.Text = "lbNameVisitor";
             // 
@@ -56,7 +55,7 @@
             // 
             this.lbDateFrom.AutoSize = true;
             this.lbDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.lbDateFrom.Location = new System.Drawing.Point(13, 128);
+            this.lbDateFrom.Location = new System.Drawing.Point(13, 179);
             this.lbDateFrom.Name = "lbDateFrom";
             this.lbDateFrom.Size = new System.Drawing.Size(126, 26);
             this.lbDateFrom.TabIndex = 1;
@@ -84,7 +83,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btDellBook);
-            this.groupBox2.Controls.Add(this.btAddBook);
+            this.groupBox2.Controls.Add(this.btSearchBook);
             this.groupBox2.Controls.Add(this.lvCurrentBooks);
             this.groupBox2.Location = new System.Drawing.Point(313, 12);
             this.groupBox2.Name = "groupBox2";
@@ -104,14 +103,15 @@
             this.btDellBook.UseVisualStyleBackColor = true;
             this.btDellBook.Click += new System.EventHandler(this.btDellBook_Click);
             // 
-            // btAddBook
+            // btSearchBook
             // 
-            this.btAddBook.Location = new System.Drawing.Point(336, 19);
-            this.btAddBook.Name = "btAddBook";
-            this.btAddBook.Size = new System.Drawing.Size(133, 23);
-            this.btAddBook.TabIndex = 4;
-            this.btAddBook.Text = "Выписать новую книгу";
-            this.btAddBook.UseVisualStyleBackColor = true;
+            this.btSearchBook.Location = new System.Drawing.Point(336, 19);
+            this.btSearchBook.Name = "btSearchBook";
+            this.btSearchBook.Size = new System.Drawing.Size(133, 23);
+            this.btSearchBook.TabIndex = 4;
+            this.btSearchBook.Text = "Выписать новую книгу";
+            this.btSearchBook.UseVisualStyleBackColor = true;
+            this.btSearchBook.Click += new System.EventHandler(this.btSearchBook_Click);
             // 
             // lvCurrentBooks
             // 
@@ -127,7 +127,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.label1.Location = new System.Drawing.Point(13, 102);
+            this.label1.Location = new System.Drawing.Point(13, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 26);
             this.label1.TabIndex = 5;
@@ -172,7 +172,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListView lvLastOperations;
         private System.Windows.Forms.ListView lvCurrentBooks;
-        private System.Windows.Forms.Button btAddBook;
+        private System.Windows.Forms.Button btSearchBook;
         private System.Windows.Forms.Button btDellBook;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb1;

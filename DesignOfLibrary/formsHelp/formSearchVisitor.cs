@@ -17,17 +17,17 @@ namespace DesignOfLibrary.forms
     public partial class formSearchVisitor : Form
     {
         Label lb;
-        IsMySQL myConnetionToMySql;
+        IsMySQL myConnectionToMySql;
         int idWorker;
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="myConnetionToMySql"></param>
+        /// <param name="myConnectionToMySql"></param>
         /// <param name="action">0 - vzyat; 1 - polojit; 2 - nichego</param>
-        public formSearchVisitor(IsMySQL myConnetionToMySql, Label lb, int idWorker)
+        public formSearchVisitor(IsMySQL myConnectionToMySql, Label lb, int idWorker)
         {
-            this.myConnetionToMySql = myConnetionToMySql;
+            this.myConnectionToMySql = myConnectionToMySql;
             this.lb = lb;
             InitializeComponent();
             refreshList();
@@ -42,7 +42,7 @@ namespace DesignOfLibrary.forms
         private void refreshList()
         {
             String search = tbSearch.Text;
-            String[][] result = myConnetionToMySql.SQLRequest("SELECT * FROM `visitor` WHERE `Name` LIKE '%" + search + "%' OR `Code` LIKE '%" + search + "%' OR `Passport` LIKE '%" + search + "%' OR `Phone` LIKE '%" + search + "%' OR `Date` LIKE '%" + search + "%' OR `Mail` LIKE '%" + search + "%' OR `Datestart` LIKE '%" + search + "%';", 8);
+            String[][] result = myConnectionToMySql.SQLRequest("SELECT * FROM `visitor` WHERE `Name` LIKE '%" + search + "%' OR `Code` LIKE '%" + search + "%' OR `Passport` LIKE '%" + search + "%' OR `Phone` LIKE '%" + search + "%' OR `Date` LIKE '%" + search + "%' OR `Mail` LIKE '%" + search + "%' OR `Datestart` LIKE '%" + search + "%';", 8);
 
             lvSearch.Items.Clear();
             lvSearch.Columns.Clear();
@@ -81,7 +81,7 @@ namespace DesignOfLibrary.forms
         }
         private void formVisitorActionThread(object p)
         {
-            formVisitorAction form = new formVisitorAction(myConnetionToMySql, Int32.Parse(p.ToString()), idWorker);
+            formVisitorAction form = new formVisitorAction(myConnectionToMySql, Int32.Parse(p.ToString()), idWorker);
             Application.Run(form);
         }
 
@@ -91,13 +91,13 @@ namespace DesignOfLibrary.forms
             {
                 ListViewItem selectedItem = lvSearch.SelectedItems[0];
 
-                string code = selectedItem.SubItems[0].Text;
-                string name = selectedItem.SubItems[1].Text;
-                string passport = selectedItem.SubItems[2].Text;
+                string codeVisitor = selectedItem.SubItems[0].Text;
+                string nameVisitor = selectedItem.SubItems[1].Text;
+                string passportVisitor = selectedItem.SubItems[2].Text;
 
                 
                 // Display the selected values in a MessageBox
-                string message = $"{name}";
+                string message = $"{nameVisitor}";
 
                 /*lb.Invoke(new Action(() =>
                 {
@@ -105,7 +105,7 @@ namespace DesignOfLibrary.forms
                 }));*/
 
                 Thread tr1 = new Thread(formVisitorActionThread);
-                tr1.Start(code);
+                tr1.Start(codeVisitor);
 
                 this.Close();
                //MessageBox.Show(message, "Selected Item");

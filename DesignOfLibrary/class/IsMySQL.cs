@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DesignOfLibrary
 {
@@ -172,6 +173,10 @@ namespace DesignOfLibrary
                 return false;
             }
 
+        }
+        static public String formatDate(DateTimePicker dtPicker)
+        {
+            return dtPicker.Value.Year.ToString() + "." + dtPicker.Value.Month.ToString() + "." + dtPicker.Value.Day.ToString();
         }
     }
 }

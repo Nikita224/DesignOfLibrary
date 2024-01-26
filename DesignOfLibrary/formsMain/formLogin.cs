@@ -15,18 +15,18 @@ namespace DesignOfLibrary
 {
     public partial class formLogin : Form
     {
-        IsMySQL myConnetionToMySql;
+        IsMySQL myConnectionToMySql;
         String[][] result;
         int idWorker;
-        public formLogin(IsMySQL myConnetionToMySql)
+        public formLogin(IsMySQL myConnectionToMySql)
         {
-            this.myConnetionToMySql = myConnetionToMySql;
+            this.myConnectionToMySql = myConnectionToMySql;
             InitializeComponent();
         }
 
         private void formLogin_Load(object sender, EventArgs e)
         {
-            result = myConnetionToMySql.SQLRequest("SELECT Code, Name FROM workers WHERE IsFair = 0", 2);
+            result = myConnectionToMySql.SQLRequest("SELECT Code, Name FROM workers WHERE IsFair = 0", 2);
 
             cbWorkers.Items.Clear();
             foreach (String[] row in result)
@@ -44,7 +44,7 @@ namespace DesignOfLibrary
         }
         private void formMainMenuThread()
         {
-            formMainMenu form = new formMainMenu(myConnetionToMySql, idWorker);
+            formMainMenu form = new formMainMenu(myConnectionToMySql, idWorker);
             Application.Run(form);
         }
     }

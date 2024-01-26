@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formsHelp\formAddVisitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsHelp\formAddVisitor.Designer.cs">
+      <DependentUpon>formAddVisitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="formsMain\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formsHelp\formAddVisitor.resx">
+      <DependentUpon>formAddVisitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsHelp\formSearchBooks.resx">
+      <DependentUpon>formSearchBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formsMain\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
