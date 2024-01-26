@@ -70,6 +70,7 @@
             this.lvSearch.Size = new System.Drawing.Size(852, 325);
             this.lvSearch.TabIndex = 4;
             this.lvSearch.UseCompatibleStateImageBehavior = false;
+            this.lvSearch.DoubleClick += new System.EventHandler(this.lvSearch_DoubleClick);
             // 
             // formSearchVisitor
             // 

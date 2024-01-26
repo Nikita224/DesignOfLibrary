@@ -30,15 +30,12 @@
         {
             this.lablePWorker = new System.Windows.Forms.Label();
             this.gbControl = new System.Windows.Forms.GroupBox();
-            this.btVisiters = new System.Windows.Forms.Button();
-            this.btFindBooks = new System.Windows.Forms.Button();
-            this.btPutBook = new System.Windows.Forms.Button();
-            this.btTakeBook = new System.Windows.Forms.Button();
+            this.btAddAbonement = new System.Windows.Forms.Button();
+            this.btStatistics = new System.Windows.Forms.Button();
+            this.btBooks = new System.Windows.Forms.Button();
+            this.btFindAbonement = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.книгиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.учетКнигToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выдатьКнигуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.принятьКнигуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списокКнигToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьКнигуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.списатьКнигуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,55 +62,55 @@
             // 
             // gbControl
             // 
-            this.gbControl.Controls.Add(this.btVisiters);
-            this.gbControl.Controls.Add(this.btFindBooks);
-            this.gbControl.Controls.Add(this.btPutBook);
-            this.gbControl.Controls.Add(this.btTakeBook);
+            this.gbControl.Controls.Add(this.btAddAbonement);
+            this.gbControl.Controls.Add(this.btStatistics);
+            this.gbControl.Controls.Add(this.btBooks);
+            this.gbControl.Controls.Add(this.btFindAbonement);
             this.gbControl.Location = new System.Drawing.Point(12, 113);
             this.gbControl.Name = "gbControl";
             this.gbControl.Size = new System.Drawing.Size(759, 236);
             this.gbControl.TabIndex = 1;
             this.gbControl.TabStop = false;
             // 
-            // btVisiters
+            // btAddAbonement
             // 
-            this.btVisiters.Location = new System.Drawing.Point(542, 162);
-            this.btVisiters.Name = "btVisiters";
-            this.btVisiters.Size = new System.Drawing.Size(202, 57);
-            this.btVisiters.TabIndex = 3;
-            this.btVisiters.Text = "Учет пользователей";
-            this.btVisiters.UseVisualStyleBackColor = true;
-            this.btVisiters.Click += new System.EventHandler(this.btVisiters_Click);
+            this.btAddAbonement.Location = new System.Drawing.Point(221, 19);
+            this.btAddAbonement.Name = "btAddAbonement";
+            this.btAddAbonement.Size = new System.Drawing.Size(202, 57);
+            this.btAddAbonement.TabIndex = 3;
+            this.btAddAbonement.Text = "Добавить абонемент";
+            this.btAddAbonement.UseVisualStyleBackColor = true;
+            this.btAddAbonement.Click += new System.EventHandler(this.btAddAbonement_Click);
             // 
-            // btFindBooks
+            // btStatistics
             // 
-            this.btFindBooks.Location = new System.Drawing.Point(542, 19);
-            this.btFindBooks.Name = "btFindBooks";
-            this.btFindBooks.Size = new System.Drawing.Size(202, 57);
-            this.btFindBooks.TabIndex = 2;
-            this.btFindBooks.Text = "Поиск книги";
-            this.btFindBooks.UseVisualStyleBackColor = true;
-            this.btFindBooks.Click += new System.EventHandler(this.btFindBooks_Click);
+            this.btStatistics.Location = new System.Drawing.Point(546, 150);
+            this.btStatistics.Name = "btStatistics";
+            this.btStatistics.Size = new System.Drawing.Size(202, 57);
+            this.btStatistics.TabIndex = 2;
+            this.btStatistics.Text = "Обзор статистики";
+            this.btStatistics.UseVisualStyleBackColor = true;
+            this.btStatistics.Click += new System.EventHandler(this.btStatistics_Click);
             // 
-            // btPutBook
+            // btBooks
             // 
-            this.btPutBook.Location = new System.Drawing.Point(236, 19);
-            this.btPutBook.Name = "btPutBook";
-            this.btPutBook.Size = new System.Drawing.Size(202, 57);
-            this.btPutBook.TabIndex = 1;
-            this.btPutBook.Text = "Принять книгу";
-            this.btPutBook.UseVisualStyleBackColor = true;
-            this.btPutBook.Click += new System.EventHandler(this.btPutBook_Click);
+            this.btBooks.Location = new System.Drawing.Point(546, 19);
+            this.btBooks.Name = "btBooks";
+            this.btBooks.Size = new System.Drawing.Size(202, 57);
+            this.btBooks.TabIndex = 1;
+            this.btBooks.Text = "Управление книгами";
+            this.btBooks.UseVisualStyleBackColor = true;
+            this.btBooks.Click += new System.EventHandler(this.btBooks_Click);
             // 
-            // btTakeBook
+            // btFindAbonement
             // 
-            this.btTakeBook.Location = new System.Drawing.Point(13, 19);
-            this.btTakeBook.Name = "btTakeBook";
-            this.btTakeBook.Size = new System.Drawing.Size(202, 57);
-            this.btTakeBook.TabIndex = 0;
-            this.btTakeBook.Text = "Выдать книгу";
-            this.btTakeBook.UseVisualStyleBackColor = true;
-            this.btTakeBook.Click += new System.EventHandler(this.btTakeBook_Click);
+            this.btFindAbonement.Location = new System.Drawing.Point(13, 19);
+            this.btFindAbonement.Name = "btFindAbonement";
+            this.btFindAbonement.Size = new System.Drawing.Size(202, 57);
+            this.btFindAbonement.TabIndex = 0;
+            this.btFindAbonement.Text = "Найти абонемент";
+            this.btFindAbonement.UseVisualStyleBackColor = true;
+            this.btFindAbonement.Click += new System.EventHandler(this.btFindAbonement_Click);
             // 
             // menuStrip1
             // 
@@ -130,34 +127,12 @@
             // книгиToolStripMenuItem
             // 
             this.книгиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.учетКнигToolStripMenuItem,
             this.списокКнигToolStripMenuItem,
             this.добавитьКнигуToolStripMenuItem,
             this.списатьКнигуToolStripMenuItem});
             this.книгиToolStripMenuItem.Name = "книгиToolStripMenuItem";
             this.книгиToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.книгиToolStripMenuItem.Text = "Книги";
-            // 
-            // учетКнигToolStripMenuItem
-            // 
-            this.учетКнигToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.выдатьКнигуToolStripMenuItem,
-            this.принятьКнигуToolStripMenuItem});
-            this.учетКнигToolStripMenuItem.Name = "учетКнигToolStripMenuItem";
-            this.учетКнигToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.учетКнигToolStripMenuItem.Text = "Учет книг";
-            // 
-            // выдатьКнигуToolStripMenuItem
-            // 
-            this.выдатьКнигуToolStripMenuItem.Name = "выдатьКнигуToolStripMenuItem";
-            this.выдатьКнигуToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.выдатьКнигуToolStripMenuItem.Text = "Выдать книгу";
-            // 
-            // принятьКнигуToolStripMenuItem
-            // 
-            this.принятьКнигуToolStripMenuItem.Name = "принятьКнигуToolStripMenuItem";
-            this.принятьКнигуToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.принятьКнигуToolStripMenuItem.Text = "Принять книгу";
             // 
             // списокКнигToolStripMenuItem
             // 
@@ -220,8 +195,9 @@
             this.labelNameWorker.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelNameWorker.Location = new System.Drawing.Point(334, 20);
             this.labelNameWorker.Name = "labelNameWorker";
-            this.labelNameWorker.Size = new System.Drawing.Size(0, 39);
+            this.labelNameWorker.Size = new System.Drawing.Size(290, 39);
             this.labelNameWorker.TabIndex = 1;
+            this.labelNameWorker.Text = "labelNameWorker";
             // 
             // formMainMenu
             // 
@@ -249,15 +225,12 @@
 
         private System.Windows.Forms.Label lablePWorker;
         private System.Windows.Forms.GroupBox gbControl;
-        private System.Windows.Forms.Button btVisiters;
-        private System.Windows.Forms.Button btFindBooks;
-        private System.Windows.Forms.Button btPutBook;
-        private System.Windows.Forms.Button btTakeBook;
+        private System.Windows.Forms.Button btAddAbonement;
+        private System.Windows.Forms.Button btStatistics;
+        private System.Windows.Forms.Button btBooks;
+        private System.Windows.Forms.Button btFindAbonement;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem книгиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem учетКнигToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выдатьКнигуToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem принятьКнигуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem списокКнигToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьКнигуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;

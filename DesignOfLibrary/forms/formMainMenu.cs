@@ -29,29 +29,29 @@ namespace DesignOfLibrary
             labelNameWorker.Text = p;
         }
 
-        private void formSearchVisitorThread()
+        private void formFindAbonementThread()
         {
-            formSearchVisitor form = new formSearchVisitor(myConnetionToMySql);
+            formSearchVisitor form = new formSearchVisitor(myConnetionToMySql, this.labelNameWorker);
             Application.Run(form);
         }
 
-        private void btTakeBook_Click(object sender, EventArgs e)
+        private void btFindAbonement_Click(object sender, EventArgs e)
         {
-            Thread tr1 = new Thread(formSearchVisitorThread);
+            Thread tr1 = new Thread(formFindAbonementThread);
             tr1.Start();
         }
 
-        private void btPutBook_Click(object sender, EventArgs e)
+        private void btAddAbonement_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btFindBooks_Click(object sender, EventArgs e)
+        private void btBooks_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btVisiters_Click(object sender, EventArgs e)
+        private void btStatistics_Click(object sender, EventArgs e)
         {
 
         }

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -15,12 +16,25 @@ namespace DesignOfLibrary.forms
 {
     public partial class formSearchVisitor : Form
     {
+        Label lb;
         IsMySQL myConnetionToMySql;
-        public formSearchVisitor(IsMySQL myConnetionToMySql)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="myConnetionToMySql"></param>
+        /// <param name="action">0 - vzyat; 1 - polojit; 2 - nichego</param>
+        public formSearchVisitor(IsMySQL myConnetionToMySql, Label lb)
         {
             this.myConnetionToMySql = myConnetionToMySql;
+            this.lb = lb;
             InitializeComponent();
             refreshList();
+        }
+
+        ~formSearchVisitor()
+        {
+            
         }
 
         private void refreshList()
@@ -62,6 +76,38 @@ namespace DesignOfLibrary.forms
         private void btSearch_Click(object sender, EventArgs e)
         {
             refreshList();
+        }
+        private void formVisitorActionThread(object p)
+        {
+            formVisitorAction form = new formVisitorAction(myConnetionToMySql, Int32.Parse(p.ToString()));
+            Application.Run(form);
+        }
+
+        private void lvSearch_DoubleClick(object sender, EventArgs e)
+        {
+            if (lvSearch.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = lvSearch.SelectedItems[0];
+
+                string code = selectedItem.SubItems[0].Text;
+                string name = selectedItem.SubItems[1].Text;
+                string passport = selectedItem.SubItems[2].Text;
+
+                
+                // Display the selected values in a MessageBox
+                string message = $"{name}";
+
+                /*lb.Invoke(new Action(() =>
+                {
+                    lb.Text = message;
+                }));*/
+
+                Thread tr1 = new Thread(formVisitorActionThread);
+                tr1.Start(code);
+
+                this.Close();
+               //MessageBox.Show(message, "Selected Item");
+            }
         }
     }
 }
