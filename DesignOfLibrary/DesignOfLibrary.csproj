@@ -60,6 +60,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formsHelp\formAddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsHelp\formAddBook.Designer.cs">
+      <DependentUpon>formAddBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formsHelp\formAddVisitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsHelp\formAddVisitor.Designer.cs">
+      <DependentUpon>formAddVisitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="formsMain\formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +97,12 @@
     <Compile Include="formsHelp\formSearchVisitor.Designer.cs">
       <DependentUpon>formSearchVisitor.cs</DependentUpon>
     </Compile>
+    <Compile Include="formsMain\formManageBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formsMain\formManageBooks.Designer.cs">
+      <DependentUpon>formManageBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="formsMain\formVisitorAction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +111,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formsHelp\formAddBook.resx">
+      <DependentUpon>formAddBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsHelp\formAddVisitor.resx">
+      <DependentUpon>formAddVisitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsHelp\formSearchBooks.resx">
+      <DependentUpon>formSearchBooks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formsMain\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formsHelp\formSearchVisitor.resx">
       <DependentUpon>formSearchVisitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formsMain\formManageBooks.resx">
+      <DependentUpon>formManageBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formsMain\formVisitorAction.resx">
       <DependentUpon>formVisitorAction.cs</DependentUpon>

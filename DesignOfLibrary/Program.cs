@@ -17,15 +17,15 @@ namespace DesignOfLibrary
         {
             string filePath = "auth.txt";
             String settings = "";
-            IsMySQL myConnetionToMySql = new IsMySQL();
+            IsMySQL myConnectionToMySql = new IsMySQL();
             try
             {
                 settings = File.ReadAllText(filePath);
-                myConnetionToMySql.SetSettings(settings);
+                myConnectionToMySql.SetSettings(settings);
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new formLogin(myConnetionToMySql));
+                Application.Run(new formLogin(myConnectionToMySql));
             }
             catch (IOException e)
             {

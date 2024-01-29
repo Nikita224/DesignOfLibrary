@@ -31,7 +31,6 @@
             this.lablePWorker = new System.Windows.Forms.Label();
             this.gbControl = new System.Windows.Forms.GroupBox();
             this.btAddAbonement = new System.Windows.Forms.Button();
-            this.btStatistics = new System.Windows.Forms.Button();
             this.btBooks = new System.Windows.Forms.Button();
             this.btFindAbonement = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -63,7 +62,6 @@
             // gbControl
             // 
             this.gbControl.Controls.Add(this.btAddAbonement);
-            this.gbControl.Controls.Add(this.btStatistics);
             this.gbControl.Controls.Add(this.btBooks);
             this.gbControl.Controls.Add(this.btFindAbonement);
             this.gbControl.Location = new System.Drawing.Point(12, 113);
@@ -82,19 +80,9 @@
             this.btAddAbonement.UseVisualStyleBackColor = true;
             this.btAddAbonement.Click += new System.EventHandler(this.btAddAbonement_Click);
             // 
-            // btStatistics
-            // 
-            this.btStatistics.Location = new System.Drawing.Point(546, 150);
-            this.btStatistics.Name = "btStatistics";
-            this.btStatistics.Size = new System.Drawing.Size(202, 57);
-            this.btStatistics.TabIndex = 2;
-            this.btStatistics.Text = "Обзор статистики";
-            this.btStatistics.UseVisualStyleBackColor = true;
-            this.btStatistics.Click += new System.EventHandler(this.btStatistics_Click);
-            // 
             // btBooks
             // 
-            this.btBooks.Location = new System.Drawing.Point(546, 19);
+            this.btBooks.Location = new System.Drawing.Point(551, 173);
             this.btBooks.Name = "btBooks";
             this.btBooks.Size = new System.Drawing.Size(202, 57);
             this.btBooks.TabIndex = 1;
@@ -226,7 +214,6 @@
         private System.Windows.Forms.Label lablePWorker;
         private System.Windows.Forms.GroupBox gbControl;
         private System.Windows.Forms.Button btAddAbonement;
-        private System.Windows.Forms.Button btStatistics;
         private System.Windows.Forms.Button btBooks;
         private System.Windows.Forms.Button btFindAbonement;
         private System.Windows.Forms.MenuStrip menuStrip1;

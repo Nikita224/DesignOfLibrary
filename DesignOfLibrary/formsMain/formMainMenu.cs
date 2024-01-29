@@ -1,4 +1,5 @@
 ﻿using DesignOfLibrary.forms;
+using DesignOfLibrary.formsHelp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,11 @@ namespace DesignOfLibrary
 {
     public partial class formMainMenu : Form
     {
-        IsMySQL myConnetionToMySql;
+        IsMySQL myConnectionToMySql;
         int idWorker;
-        public formMainMenu(IsMySQL myConnetionToMySql, int idWorker)
+        public formMainMenu(IsMySQL myConnectionToMySql, int idWorker)
         {
-            this.myConnetionToMySql = myConnetionToMySql;
+            this.myConnectionToMySql = myConnectionToMySql;
             this.idWorker = idWorker;
             InitializeComponent();
         }
@@ -27,13 +28,13 @@ namespace DesignOfLibrary
         {
             
             
-            String p = myConnetionToMySql.SQLRequest("SELECT Name FROM `workers`", 1)[0][0];
+            String p = myConnectionToMySql.SQLRequest("SELECT Name FROM `workers`", 1)[0][0];
             labelNameWorker.Text = p;
         }
 
         private void formFindAbonementThread()
         {
-            formSearchVisitor form = new formSearchVisitor(myConnetionToMySql, this.labelNameWorker, idWorker);
+            formSearchVisitor form = new formSearchVisitor(myConnectionToMySql, this.labelNameWorker, idWorker);
             Application.Run(form);
         }
 
@@ -42,15 +43,27 @@ namespace DesignOfLibrary
             Thread tr1 = new Thread(formFindAbonementThread);
             tr1.Start();
         }
+        private void formAddAbonementThread()
+        {
+            formAddVisitor form = new formAddVisitor(myConnectionToMySql, idWorker);
+            Application.Run(form);
+        }
 
         private void btAddAbonement_Click(object sender, EventArgs e)
         {
-
+            Thread tr1 = new Thread(formAddAbonementThread);
+            tr1.Start();
+        }
+        private void formManageBooksThread()
+        {
+            formManageBooks form = new formManageBooks(myConnectionToMySql, idWorker);
+            Application.Run(form);
         }
 
         private void btBooks_Click(object sender, EventArgs e)
         {
-
+            Thread tr1 = new Thread(formManageBooksThread);
+            tr1.Start();
         }
 
         private void btStatistics_Click(object sender, EventArgs e)
