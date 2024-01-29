@@ -174,6 +174,46 @@ namespace DesignOfLibrary
             }
 
         }
+
+        /// <summary>
+        /// SQL Start Procedure Command
+        /// </summary>
+        /// <param name="strSQL"></param>
+        /// <returns>true if is all right</returns>
+        public bool SQLStartProcedure(String strSQL)
+        {
+            string[] statements = strSQL.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+            using (MySqlConnection myConnection = new MySqlConnection(settings))
+            {
+                myConnection.Open();
+
+                using (MySqlCommand myCommand = new MySqlCommand())
+                {
+                    myCommand.Connection = myConnection;
+
+                    foreach (string statement in statements)
+                    {
+                        myCommand.CommandText = statement.Trim();
+
+                        try
+                        {
+                            myCommand.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Error executing SQL statement: {ex}");
+                            myConnection.Close();
+                            return false;
+                        }
+                    }
+                }
+
+                myConnection.Close();
+                return true;
+            }
+        }
+
         static public String formatDate(DateTimePicker dtPicker)
         {
             return dtPicker.Value.Year.ToString() + "." + dtPicker.Value.Month.ToString() + "." + dtPicker.Value.Day.ToString();

@@ -26,7 +26,7 @@ namespace DesignOfLibrary
         private void refreshList()
         {
             String search = tbSearch.Text;
-            String[][] result = myConnectionToMySql.SQLRequest("SELECT books.Code as Code, books.Name as bookName, author.Name as authorName, DATE_FORMAT(books.Date, '%Y-%m-%d') as Date FROM books INNER JOIN author ON author.Code = books.Code_Author WHERE books.Name LIKE '%" + search + "%' OR author.Name LIKE '%" + search + "%'", 4);
+            String[][] result = myConnectionToMySql.SQLRequest("SELECT books.Code as Code, books.Name as bookName, author.Name as authorName, DATE_FORMAT(books.Date, '%Y-%m-%d') as Date FROM books INNER JOIN author ON author.Code = books.Code_Author WHERE books.IsDell LIKE true AND (books.Name LIKE '%" + search + "%' OR author.Name LIKE '%" + search + "%')", 4);
 
             lvSearch.Items.Clear();
             lvSearch.Columns.Clear();

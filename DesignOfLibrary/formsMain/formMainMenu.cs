@@ -54,10 +54,16 @@ namespace DesignOfLibrary
             Thread tr1 = new Thread(formAddAbonementThread);
             tr1.Start();
         }
+        private void formManageBooksThread()
+        {
+            formManageBooks form = new formManageBooks(myConnectionToMySql, idWorker);
+            Application.Run(form);
+        }
 
         private void btBooks_Click(object sender, EventArgs e)
         {
-
+            Thread tr1 = new Thread(formManageBooksThread);
+            tr1.Start();
         }
 
         private void btStatistics_Click(object sender, EventArgs e)
